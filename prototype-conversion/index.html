@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype Conversion MVP</title>
+    <meta
+      name="description"
+      content="A working prototype-to-product conversion demo focused on turning HTML/CSS/JS into a deployable mobile app."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Prototype Conversion MVP</p>
+          <h1>Take a finished prototype and turn it into something users can install.</h1>
+          <p class="hero-text">
+            This demo is aimed at projects that already have HTML, CSS, and JS
+            but still need the hard work of production structure, native
+            packaging, state cleanup, and deployment discipline.
+          </p>
+        </div>
+        <div class="hero-stats">
+          <article>
+            <strong>Audit</strong>
+            <span>reuse before rewrite</span>
+          </article>
+          <article>
+            <strong>Wrap</strong>
+            <span>mobile-ready shell</span>
+          </article>
+          <article>
+            <strong>Ship</strong>
+            <span>production path</span>
+          </article>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel">
+          <div class="section-head">
+            <p class="eyebrow">Conversion Phases</p>
+            <h2>Select the active delivery phase</h2>
+          </div>
+          <div class="phase-list" id="phase-list"></div>
+        </section>
+
+        <aside class="panel detail-panel">
+          <div class="section-head">
+            <p class="eyebrow">Current Focus</p>
+            <h2 id="detail-title">Prototype audit</h2>
+          </div>
+          <div class="detail-card">
+            <p id="detail-copy">
+              Review what is already reusable, isolate fragile interactions, and
+              decide where native wrappers or backend services are actually
+              needed.
+            </p>
+            <div class="detail-metrics">
+              <div>
+                <span class="metric-label">Reusable UI</span>
+                <strong id="metric-ui">78%</strong>
+              </div>
+              <div>
+                <span class="metric-label">Shipping risk</span>
+                <strong id="metric-risk">Medium</strong>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <template id="phase-template">
+      <button class="phase-card" type="button">
+        <strong class="phase-title"></strong>
+        <p class="phase-copy"></p>
+        <span class="phase-tag"></span>
+      </button>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

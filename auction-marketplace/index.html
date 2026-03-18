@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction Marketplace MVP</title>
+    <meta
+      name="description"
+      content="A working auction marketplace MVP prototype with listings, bid history, and seller-side controls."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Auction Marketplace MVP</p>
+          <h1>List fast, bid cleanly, validate the marketplace loop.</h1>
+          <p class="hero-text">
+            This prototype focuses on the lean auction flow: sellers list items,
+            buyers place bids, the product page shows bid history, and the admin
+            side stays lightweight enough for quick idea validation.
+          </p>
+          <div class="hero-stats">
+            <article>
+              <strong>Listings</strong>
+              <span>browse and select</span>
+            </article>
+            <article>
+              <strong>Bids</strong>
+              <span>validated live</span>
+            </article>
+            <article>
+              <strong>Admin</strong>
+              <span>light controls</span>
+            </article>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <p class="panel-label">MVP focus</p>
+          <ul>
+            <li>User registration, seller profiles, and listing creation</li>
+            <li>Simple bidding flow with recent bid history</li>
+            <li>Clean mobile-first structure built to test demand quickly</li>
+          </ul>
+        </aside>
+      </header>
+
+      <main class="market-layout">
+        <section class="listing-panel">
+          <div class="section-head">
+            <p class="eyebrow">Listings</p>
+            <h2>Active auctions</h2>
+          </div>
+          <div class="listing-grid" id="listing-grid"></div>
+        </section>
+
+        <section class="detail-panel">
+          <div class="section-head">
+            <p class="eyebrow">Auction</p>
+            <h2 id="detail-title">Loading item</h2>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-metrics">
+              <div>
+                <span class="metric-label">Current bid</span>
+                <strong id="current-bid">$0</strong>
+              </div>
+              <div>
+                <span class="metric-label">Time left</span>
+                <strong id="time-left">--</strong>
+              </div>
+            </div>
+
+            <p class="detail-description" id="detail-description"></p>
+
+            <div class="bid-box">
+              <label class="field">
+                <span>Your bid</span>
+                <input id="bid-input" type="number" min="0" step="5" />
+              </label>
+              <button class="primary-button" id="place-bid" type="button">Place bid</button>
+            </div>
+
+            <p class="bid-note" id="bid-note">Enter a bid above the current amount.</p>
+          </div>
+
+          <div class="history-panel">
+            <div class="history-head">
+              <h3>Recent bids</h3>
+              <span id="watch-status">Watching</span>
+            </div>
+            <div class="bid-history" id="bid-history"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="listing-card-template">
+      <article class="listing-card">
+        <div class="listing-card-top">
+          <span class="listing-category"></span>
+          <span class="listing-time"></span>
+        </div>
+        <h3 class="listing-title"></h3>
+        <p class="listing-copy"></p>
+        <div class="listing-bottom">
+          <strong class="listing-bid"></strong>
+          <button class="listing-button" type="button">Open auction</button>
+        </div>
+      </article>
+    </template>
+
+    <template id="bid-history-template">
+      <article class="bid-item">
+        <strong class="bid-amount"></strong>
+        <span class="bid-meta"></span>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

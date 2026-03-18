@@ -10,22 +10,22 @@ const estimateBands = [
   {
     max: 10,
     range: "2-3 weeks",
-    summary: "Lean validation slice focused on one core workflow and fast user feedback."
+    summary: "Tight stabilization sprint focused on the most fragile handoff."
   },
   {
     max: 18,
     range: "4-6 weeks",
-    summary: "Balanced MVP with the right amount of surface area for early user testing."
+    summary: "Balanced completion sprint that makes the product usable end to end."
   },
   {
     max: 26,
     range: "6-8 weeks",
-    summary: "Broader MVP with stronger operations, monetization, and internal tooling."
+    summary: "Broader hardening pass with deeper operational visibility and QA."
   },
   {
     max: Infinity,
     range: "8+ weeks",
-    summary: "This is starting to push beyond MVP scope and needs phased delivery."
+    summary: "This is pushing into platform refactoring and should be phased carefully."
   }
 ];
 
@@ -33,47 +33,47 @@ const boardStateKey = "mvp-showcase-board";
 const initialColumns = [
   {
     id: "discovery",
-    title: "Discovery",
+    title: "Audit",
     tasks: [
       {
         id: "scope",
-        badge: "Research",
-        title: "Scope the first usable release",
-        body: "Lock the smallest feature set that proves value for early users.",
-        action: "Move to Build"
+        badge: "Map",
+        title: "Trace the broken handoffs",
+        body: "Identify exactly where AOI, samples, analysis, training, and results lose context.",
+        action: "Move to Integrate"
       }
     ]
   },
   {
     id: "build",
-    title: "Build",
+    title: "Integrate",
     tasks: [
       {
         id: "flows",
-        badge: "Execution",
-        title: "Implement core user flows",
-        body: "Authentication, dashboard flow, and the one workflow clients actually care about.",
-        action: "Move to Launch"
+        badge: "Workflow",
+        title: "Reconnect the core pipeline",
+        body: "Unify the frontend and backend so the main flow completes without manual intervention.",
+        action: "Move to Release"
       },
       {
         id: "payments",
-        badge: "Revenue",
-        title: "Wire billing and permissions",
-        body: "Make payments, plans, and user roles production-ready for the first cohort.",
-        action: "Move to Launch"
+        badge: "Stability",
+        title: "Clean the orchestration layer",
+        body: "Tighten APIs, job states, and failure handling across Python and app services.",
+        action: "Move to Release"
       }
     ]
   },
   {
     id: "launch",
-    title: "Launch",
+    title: "Release",
     tasks: [
       {
         id: "handoff",
-        badge: "Delivery",
-        title: "Prepare for pilot rollout",
-        body: "Finish QA, configure analytics, and tighten the first feedback loop.",
-        action: "Archive"
+        badge: "Pilot",
+        title: "Prepare the first stable release",
+        body: "Run QA across the happy path and package the product for a controlled pilot rollout.",
+        action: "Recycle"
       }
     ]
   }
@@ -136,8 +136,8 @@ function cycleTask(taskId) {
   if (currentColumnIndex === columns.length - 1) {
     columns[0].tasks.push({
       ...task,
-      badge: "Recycled",
-      action: "Move to Build"
+      badge: "Recycle",
+      action: "Move to Integrate"
     });
   } else {
     columns[currentColumnIndex + 1].tasks.push(task);

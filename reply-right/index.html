@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reply Right MVP</title>
+    <meta
+      name="description"
+      content="A working MVP prototype for rewriting emotionally charged co-parenting messages into calmer, clearer drafts."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Reply Right MVP</p>
+          <h1>De-escalate the message before it escalates the day.</h1>
+          <p class="hero-text">
+            This working prototype focuses on the exact Phase 1 loop: enter a
+            charged message, choose a rewrite posture, generate a calmer draft,
+            and save it to lightweight history for review on desktop or mobile.
+          </p>
+          <div class="hero-stats">
+            <article>
+              <strong>3</strong>
+              <span>rewrite modes</span>
+            </article>
+            <article>
+              <strong>History</strong>
+              <span>stored locally</span>
+            </article>
+            <article>
+              <strong>Responsive</strong>
+              <span>mobile ready</span>
+            </article>
+          </div>
+        </div>
+        <div class="hero-card">
+          <p class="card-label">Phase 1 scope</p>
+          <ul>
+            <li>Protected app shell and clean dashboard flow</li>
+            <li>Message input, rewrite action, and saved history</li>
+            <li>Calm tone output tuned for quick review and copy</li>
+          </ul>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="composer">
+          <div class="section-head">
+            <p class="eyebrow">Compose</p>
+            <h2>Rewrite a difficult message</h2>
+          </div>
+
+          <label class="field">
+            <span>Original message</span>
+            <textarea
+              id="source-message"
+              rows="7"
+              placeholder="Paste the incoming message or draft your reply here."
+            >You never tell me the pickup plan on time and this is getting ridiculous. I need the details now.</textarea>
+          </label>
+
+          <div class="controls">
+            <div class="mode-group" id="mode-group">
+              <button class="mode-chip is-active" data-mode="neutral" type="button">Neutral</button>
+              <button class="mode-chip" data-mode="clear" type="button">Clear</button>
+              <button class="mode-chip" data-mode="brief" type="button">Brief</button>
+            </div>
+            <div class="toggle-group">
+              <label>
+                <input type="checkbox" id="retain-facts" checked />
+                Retain factual details
+              </label>
+              <label>
+                <input type="checkbox" id="remove-blame" checked />
+                Remove blame language
+              </label>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="primary-button" id="rewrite-button" type="button">Rewrite message</button>
+            <div class="meter">
+              <span>Conflict score</span>
+              <strong id="conflict-score">62</strong>
+            </div>
+          </div>
+        </section>
+
+        <aside class="result-panel">
+          <div class="section-head compact">
+            <p class="eyebrow">Output</p>
+            <h2>Calmer draft</h2>
+          </div>
+          <article class="result-card">
+            <p id="rewritten-message">
+              I want to make sure we stay aligned on the pickup plan. Please send
+              the timing and details when you can so I can plan accordingly.
+            </p>
+          </article>
+          <div class="result-meta">
+            <div>
+              <span class="meta-label">Tone</span>
+              <strong id="selected-mode-label">Neutral</strong>
+            </div>
+            <div>
+              <span class="meta-label">Length</span>
+              <strong id="message-length">109 chars</strong>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <section class="history">
+        <div class="section-head">
+          <p class="eyebrow">Review</p>
+          <h2>Recent rewrites</h2>
+        </div>
+        <div class="history-list" id="history-list"></div>
+      </section>
+    </div>
+
+    <template id="history-item-template">
+      <article class="history-card">
+        <div class="history-card-head">
+          <span class="history-mode"></span>
+          <span class="history-score"></span>
+        </div>
+        <p class="history-preview"></p>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

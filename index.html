@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVP Sprint Showcase</title>
+    <meta
+      name="description"
+      content="A polished MVP showcase with a scope builder, execution board, and launch dashboard."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Rapid MVP Demonstration</p>
+          <h1>Ship a working product fast without shipping something flimsy.</h1>
+          <p class="hero-text">
+            This demo shows the kind of product thinking, interface quality, and
+            execution speed I use for MVP builds. It includes a live scope
+            planner, a delivery board, and a launch dashboard with persistent
+            state.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#planner">Open scope planner</a>
+            <a class="button button-secondary" href="#board">Review delivery board</a>
+          </div>
+          <ul class="hero-stats">
+            <li>
+              <strong>3</strong>
+              <span>interactive modules</span>
+            </li>
+            <li>
+              <strong>Local</strong>
+              <span>state persistence</span>
+            </li>
+            <li>
+              <strong>Responsive</strong>
+              <span>desktop and mobile</span>
+            </li>
+          </ul>
+        </div>
+        <section class="hero-panel" aria-label="Launch status preview">
+          <div class="panel-header">
+            <span class="panel-tag">Launch panel</span>
+            <span class="status-pill">
+              <span class="status-dot"></span>
+              Ready for client review
+            </span>
+          </div>
+          <div class="launch-grid">
+            <article>
+              <h2>Build confidence fast</h2>
+              <p>
+                Use a concrete demo link in outreach instead of vague claims
+                about speed or architecture.
+              </p>
+            </article>
+            <article>
+              <h2>Prove execution range</h2>
+              <p>
+                SaaS, marketplaces, consumer mobile workflows, and internal
+                tools all start with a disciplined MVP slice.
+              </p>
+            </article>
+          </div>
+          <div class="launch-metrics">
+            <div>
+              <span class="metric-label">Target launch window</span>
+              <strong>2-6 weeks</strong>
+            </div>
+            <div>
+              <span class="metric-label">Recommended stack</span>
+              <strong>React, Supabase, Stripe</strong>
+            </div>
+            <div>
+              <span class="metric-label">Delivery posture</span>
+              <strong>Milestone based</strong>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <main>
+        <section class="section" id="planner">
+          <div class="section-heading">
+            <p class="eyebrow">Module 1</p>
+            <h2>MVP scope planner</h2>
+            <p>
+              Toggle the features you want in the first release. The estimate
+              updates immediately so stakeholders can see what belongs in the
+              MVP and what should wait.
+            </p>
+          </div>
+          <div class="planner-layout">
+            <form class="feature-grid" id="feature-form">
+              <label class="feature-card">
+                <input type="checkbox" data-points="4" checked />
+                <span>Authentication and onboarding</span>
+                <small>Roles, invite flow, first-run setup</small>
+              </label>
+              <label class="feature-card">
+                <input type="checkbox" data-points="5" checked />
+                <span>Core dashboard</span>
+                <small>Primary workflow, key metrics, status states</small>
+              </label>
+              <label class="feature-card">
+                <input type="checkbox" data-points="3" checked />
+                <span>Payments</span>
+                <small>Checkout, subscriptions, usage-based logic</small>
+              </label>
+              <label class="feature-card">
+                <input type="checkbox" data-points="4" />
+                <span>Messaging and notifications</span>
+                <small>In-app alerts, email hooks, reminders</small>
+              </label>
+              <label class="feature-card">
+                <input type="checkbox" data-points="6" />
+                <span>Admin operations</span>
+                <small>Moderation, support tooling, auditing</small>
+              </label>
+              <label class="feature-card">
+                <input type="checkbox" data-points="5" />
+                <span>AI workflow layer</span>
+                <small>Prompt orchestration, summaries, copilots</small>
+              </label>
+            </form>
+            <aside class="estimate-card" aria-live="polite">
+              <p class="eyebrow">Current estimate</p>
+              <h3 id="estimate-range">4-6 weeks</h3>
+              <p id="estimate-summary">
+                Balanced MVP with the right amount of surface area for early
+                user testing.
+              </p>
+              <div class="estimate-breakdown">
+                <div>
+                  <span class="metric-label">Selected features</span>
+                  <strong id="selected-count">3</strong>
+                </div>
+                <div>
+                  <span class="metric-label">Delivery points</span>
+                  <strong id="selected-points">12</strong>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section" id="board">
+          <div class="section-heading">
+            <p class="eyebrow">Module 2</p>
+            <h2>Execution board</h2>
+            <p>
+              Update task states and refresh the page. Everything persists
+              locally, which makes this a lightweight but credible interaction
+              demo for client reviews.
+            </p>
+          </div>
+          <div class="board-grid" id="board-columns"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <p class="eyebrow">Module 3</p>
+            <h2>Launch readiness dashboard</h2>
+            <p>
+              A compact delivery summary covering stability, rollout planning,
+              and product readiness.
+            </p>
+          </div>
+          <div class="readiness-grid">
+            <article class="readiness-card accent-card">
+              <h3>Stability checks</h3>
+              <ul>
+                <li>Responsive layouts verified</li>
+                <li>Local persistence working</li>
+                <li>Static deploy compatible</li>
+              </ul>
+            </article>
+            <article class="readiness-card">
+              <h3>Recommended MVP stack</h3>
+              <ul>
+                <li>Frontend: React or Next.js</li>
+                <li>Backend: Supabase or Firebase</li>
+                <li>Payments: Stripe</li>
+              </ul>
+            </article>
+            <article class="readiness-card">
+              <h3>Best fit projects</h3>
+              <ul>
+                <li>SaaS internal tools</li>
+                <li>Consumer web products</li>
+                <li>Marketplace and booking flows</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="task-card-template">
+      <article class="task-card">
+        <div class="task-badge"></div>
+        <h3></h3>
+        <p></p>
+        <button type="button" class="task-action"></button>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Intelligence MVP</title>
+    <meta
+      name="description"
+      content="An e-commerce intelligence MVP prototype with source connectors, product alerts, and API-focused insight cards."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">E-commerce Intelligence MVP</p>
+          <h1>Connect the APIs, normalize the data, surface the signal.</h1>
+          <p class="hero-text">
+            This prototype is centered on an API-first e-commerce intelligence
+            build: connect storefront sources, normalize inventory and pricing
+            data, and turn it into actionable alerting instead of a noisy dashboard.
+          </p>
+        </div>
+        <aside class="hero-panel">
+          <div>
+            <span class="metric-label">Build window</span>
+            <strong>8-week MVP cadence</strong>
+          </div>
+          <div>
+            <span class="metric-label">Primary risk</span>
+            <strong>Connector reliability</strong>
+          </div>
+          <div>
+            <span class="metric-label">Core posture</span>
+            <strong>API-first from day one</strong>
+          </div>
+        </aside>
+      </header>
+
+      <main class="grid">
+        <section class="panel">
+          <div class="section-head">
+            <p class="eyebrow">Connectors</p>
+            <h2>Choose a source</h2>
+          </div>
+          <div class="connector-list" id="connector-list"></div>
+        </section>
+
+        <section class="panel insights-panel">
+          <div class="section-head">
+            <p class="eyebrow">Insights</p>
+            <h2 id="detail-title">Marketplace trend signal</h2>
+          </div>
+          <div class="insight-grid">
+            <article>
+              <span class="metric-label">Catalog health</span>
+              <strong id="metric-catalog">91%</strong>
+            </article>
+            <article>
+              <span class="metric-label">Pricing drift</span>
+              <strong id="metric-pricing">7 alerts</strong>
+            </article>
+            <article>
+              <span class="metric-label">Sync posture</span>
+              <strong id="metric-sync">Stable</strong>
+            </article>
+          </div>
+          <article class="detail-card">
+            <p id="detail-copy">
+              A clean API-backed source health view that makes it obvious which
+              products need action and which connectors can be trusted.
+            </p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <template id="connector-template">
+      <button class="connector-card" type="button">
+        <strong class="connector-title"></strong>
+        <p class="connector-copy"></p>
+        <span class="connector-tag"></span>
+      </button>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
